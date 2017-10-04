@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Renderer } from '@angular/core';
+import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
 
 
 @Component({
@@ -9,6 +9,10 @@ export class AccordionComponent implements OnInit {
 
   accordionExapanded = false;
   @ViewChild("cc") cardContent: any;
+  @Input('title') title: string;
+
+  //Icono flecha
+  icon: string = "arrow-forward";
 
   constructor(public renderer: Renderer) {
     
@@ -34,6 +38,7 @@ export class AccordionComponent implements OnInit {
 
     //Accion cerrar acordeon
     this.accordionExapanded = !this.accordionExapanded;
+    this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
 
   }
 
