@@ -8,11 +8,11 @@
 
 <ion-content padding>
 
-  <accordion *ngFor="let user of users" [title]="user.name">
+  <accordion *ngFor="let post of posts" [title]="post.title.rendered">
 
     <ion-list>
       <ion-item>
-        Email: {{user.email}}
+        <p [innerHTML]="post.content.rendered"></p>
       </ion-item>
     </ion-list>
 
